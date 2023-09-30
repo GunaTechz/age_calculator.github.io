@@ -4,17 +4,16 @@ This is a solution to the [Age calculator app challenge on Frontend Mentor](http
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Frontend Mentor - Age calculator app solution](#frontend-mentor---age-calculator-app-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [reference](#reference)
 
 ## Overview
 
@@ -35,12 +34,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.png)
+![Screenshot](./screenshot.png)
 
 ### Links
 
-- Solution URL: https://github.com/Jake-Oz/age-calculator.git
-- Live Site URL: https://age-calculator-jake-oz.vercel.app
+- Solution URL: [https://github.com/GunaTechz/age_calculator.github.io](https://github.com/GunaTechz/age_calculator.github.io)
+- Live Site URL: [https://your-live-site-url.com](https://your-live-site-url.com) (replace with your actual live site URL)
 
 ## My process
 
@@ -54,50 +53,7 @@ Users should be able to:
 
 I learned how to deal with animation events in React using the "Animation Event" import.
 
-eg:
+### reference 
 
-```tsx
-const handleAnimationEvent = (e: AnimationEvent<HTMLDivElement>) => {
-  setIsNewData(false);
-};
-```
-
-Also learnt more about the "react-hook-form" library which was really powerful for managing form validation.
-eg:
-
-```tsx
-<input
-  placeholder="YYYY"
-  {...register("year", {
-    required: "This field is required",
-    pattern: {
-      value: /[0-9]+/,
-      message: "Must be a valid year",
-    },
-    maxLength: {
-      value: 4,
-      message: "Must be a valid year",
-    },
-    validate: (value, formValues) => {
-      const dateNow = +new Date();
-      const checkDate = +new Date(
-        Number(formValues.year),
-        Number(formValues.month) - 1,
-        Number(formValues.day)
-      );
-      return checkDate < dateNow || "Must be in the past";
-    },
-  })}
-/>
-```
-
-Also learnt more about Next JS and React hooks and props.
-
-### Useful resources
-
-- https://felixgerschau.com/react-typescript-onanimationend-event-type/ - This helped me understand the syntax for AnimationEvent in a really simple way.
-- https://react-hook-form.com - This site is not all that descriptive but does give a good examples of the form validation options.
-
-## Author
-
-- Frontend Mentor - @Jake-Oz (https://www.frontendmentor.io/profile/Jake-Oz)
+Github : "https://github.com/GunaTechz/age_calculator.github.io"
+FrontEnd Mentor: "https://www.frontendmentor.io/profile/ragulpalanisamy"
