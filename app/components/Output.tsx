@@ -38,8 +38,8 @@ const Output: React.FC<OutputProps> = ({ data }) => {
   const days = dateDuration?.days;
 
   const animateClass = isNewData
-    ? "animate-grow-text text-purple italic font-extrabold text-5xl desktop:text-8xl text-center"
-    : "text-purple italic font-extrabold text-6xl desktop:text-8xl text-center";
+    ? "animate-grow-text text-purple italic font-extrabold text-2xl md:text-8xl text-center"
+    : "text-purple italic font-extrabold text-2xl md:text-8xl text-center";
 
   return (
     <div className="flex flex-col mb-10">
@@ -47,20 +47,20 @@ const Output: React.FC<OutputProps> = ({ data }) => {
         <div onAnimationEnd={handleAnimationEvent} className={animateClass}>
           {years ? years : "- - "}
         </div>
-        <div className="text-offBlack italic font-extrabold text-2xl desktop:text-8xl col-span-2">
+        <div className="text-offBlack italic font-extrabold text-2xl desktop:text-6xl col-span-2">
           {" "}
           year<span>{years && years < 2 ? "" : "s"}</span>
         </div>
       </div>
       <div className="mb-4 grid grid-cols-3 h-11 desktop:h-24">
         <div className={animateClass}>{months ? months : "- - "}</div>
-        <div className="text-offBlack italic font-extrabold text-2xl desktop:text-8xl col-span-2">
+        <div className="text-offBlack italic font-extrabold text-2xl desktop:text-6xl col-span-2">
           {"  "} months
         </div>
       </div>
       <div className="grid grid-cols-3 h-11 desktop:h-24">
         <div className={animateClass}>{days ? days : "- - "}</div>
-        <div className="text-offBlack italic font-extrabold text-2xl desktop:text-8xl col-span-2">
+        <div className="text-offBlack italic font-extrabold text-2xl desktop:text-6xl col-span-2">
           {" "}
           days
         </div>

@@ -41,14 +41,17 @@ const DateEntry: React.FC<DateEntryProps> = ({ handleDates }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex flex-row align-middle gap-4 bg-white">
+      <h1 className="text-offBlack italic font-bold text-xl desktop:text-3xl text-center">
+        AGE CALCULATOR <span className='text-purple'>- Ragul P</span>
+      </h1>
+      <div className="desktop:flex flex-row align-middle gap-4 bg-white mt-10">
         <div className="flex flex-col gap-1">
           {isError ? (
-            <label className="text-lightRed tracking-widest text-xs font-bold">
+            <label className="text-lightRed tracking-widest text-xs desktop:text-lg font-bold">
               DAY
             </label>
           ) : (
-            <label className="text-smokeyGrey tracking-widest text-xs font-bold">
+            <label className="text-smokeyGrey tracking-widest text-xs desktop:text-lg font-bold">
               DAY
             </label>
           )}
@@ -90,14 +93,26 @@ const DateEntry: React.FC<DateEntryProps> = ({ handleDates }) => {
                 : "p-3 w-[100%] desktop:w-[150px] h-14 border rounded-md hover:border-purple text-xl desktop:text-3xl font-bold cursor-pointer"
             }
           />
+          <div className="md:hidden leading-3">
+            {errors.day && (
+              <label className="text-lightRed italic text-xs desktop:text-lg">
+                {errors.day.message}
+              </label>
+            )}
+            {errors.root?.message && (
+              <label className="text-lightRed italic text-xs desktop:text-lg">
+                {errors.root.message}
+              </label>
+            )}
+          </div>
         </div>
         <div className="flex flex-col gap-1">
           {isError ? (
-            <label className="text-lightRed tracking-widest text-xs font-bold">
+            <label className="text-lightRed tracking-widest text-xs desktop:text-lg font-bold">
               MONTH
             </label>
           ) : (
-            <label className="text-smokeyGrey tracking-widest text-xs font-bold">
+            <label className="text-smokeyGrey tracking-widest text-xs desktop:text-lg font-bold">
               MONTH
             </label>
           )}
@@ -120,14 +135,26 @@ const DateEntry: React.FC<DateEntryProps> = ({ handleDates }) => {
                 : "p-3 w-[100%] desktop:w-[150px] h-14 border rounded-md hover:border-purple text-xl desktop:text-3xl font-bold cursor-pointer"
             }
           />
+          <div className='md:hidden leading-3'>
+            {errors.month && (
+              <label className="text-lightRed italic text-xs desktop:text-lg">
+                {errors.month.message}
+              </label>
+            )}
+            {errors.root?.message && (
+              <label className="text-lightRed italic text-xs desktop:text-lg">
+                {errors.root.message}
+              </label>
+            )}
+          </div>
         </div>
         <div className="flex flex-col gap-1">
           {isError ? (
-            <label className="text-lightRed tracking-widest text-xs font-bold">
+            <label className="text-lightRed tracking-widest text-xs desktop:text-lg font-bold">
               YEAR
             </label>
           ) : (
-            <label className="text-smokeyGrey tracking-widest text-xs font-bold">
+            <label className="text-smokeyGrey tracking-widest text-xs desktop:text-lg font-bold">
               YEAR
             </label>
           )}
@@ -159,41 +186,53 @@ const DateEntry: React.FC<DateEntryProps> = ({ handleDates }) => {
                 : "p-3 w-[100%] desktop:w-[150px] h-14 border rounded-md hover:border-purple text-xl desktop:text-3xl font-bold cursor-pointer"
             }
           />
+          <div className='md:hidden leading-3'>
+            {errors.year && (
+              <label className="text-lightRed italic text-xs desktop:text-lg">
+                {errors.year.message}
+              </label>
+            )}
+            {errors.root?.message && (
+              <label className="text-lightRed italic text-xs desktop:text-lg">
+                {errors.root.message}
+              </label>
+            )}
+          </div>
         </div>
       </div>
-      <div className="flex flex-row gap-8">
+      <div className="hidden md:flex md:visible flex-row gap-8">
         <div className="w-[100px] desktop:w-[150px] leading-3">
           {errors.day && (
-            <label className="text-lightRed italic text-xs">
+            <label className="text-lightRed italic text-xs desktop:text-lg">
               {errors.day.message}
             </label>
           )}
           {errors.root?.message && (
-            <label className="text-lightRed italic text-xs">
+            <label className="text-lightRed italic text-xs desktop:text-lg">
               {errors.root.message}
             </label>
           )}
         </div>
         <div className="absolute left-[38%] desktop:left-[230px] w-[100px] desktop:w-[150px] leading-3">
           {errors.month && (
-            <label className="text-lightRed italic text-xs">
+            <label className="text-lightRed italic text-xs desktop:text-lg">
               {errors.month.message}
             </label>
           )}
           {errors.root?.message && (
-            <label className="text-lightRed italic text-xs">
+            <label className="text-lightRed italic text-xs desktop:text-lg">
               {errors.root.message}
             </label>
           )}
         </div>
         <div className="absolute left-[68%] desktop:left-[415px] w-[100px] desktop:w-[150px] leading-3">
           {errors.year && (
-            <label className="text-lightRed italic text-xs">
+            <label className="text-lightRed italic text-xs desktop:text-lg">
               {errors.year.message}
             </label>
           )}
           {errors.root?.message && (
-            <label className="text-lightRed italic text-xs">
+            <label className="text-lightRed italic text-xs desktop:text-lg">
               {errors.root.message}
             </label>
           )}
