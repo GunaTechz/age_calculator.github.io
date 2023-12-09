@@ -33,12 +33,6 @@ const DateEntry: React.FC<DateEntryProps> = ({ handleDates }) => {
     handleDates(inputData);
   };
 
-  const isError =
-    errors.day?.message ||
-    errors.month?.message ||
-    errors.year?.message ||
-    errors.root?.message;
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <h1 className="text-offBlack italic font-bold text-xl desktop:text-3xl text-center">
@@ -46,7 +40,7 @@ const DateEntry: React.FC<DateEntryProps> = ({ handleDates }) => {
       </h1>
       <div className="desktop:flex flex-row align-middle gap-4 bg-white mt-10">
         <div className="flex flex-col gap-1">
-          {isError ? (
+          {errors.day?.message ? (
             <label className="text-lightRed tracking-widest text-xs desktop:text-lg font-bold">
               DAY
             </label>
@@ -88,7 +82,7 @@ const DateEntry: React.FC<DateEntryProps> = ({ handleDates }) => {
               },
             })}
             className={
-              isError
+              errors.day?.message
                 ? "p-3 w-[100%] desktop:w-[150px] mb-2 h-14 border rounded-md border-lightRed text-xl desktop:text-3xl font-bold cursor-pointer"
                 : "p-3 w-[100%] desktop:w-[150px] h-14 border rounded-md hover:border-purple text-xl desktop:text-3xl font-bold cursor-pointer"
             }
@@ -107,7 +101,7 @@ const DateEntry: React.FC<DateEntryProps> = ({ handleDates }) => {
           </div>
         </div>
         <div className="flex flex-col gap-1">
-          {isError ? (
+          {errors.month ? (
             <label className="text-lightRed tracking-widest text-xs desktop:text-lg font-bold">
               MONTH
             </label>
@@ -130,13 +124,13 @@ const DateEntry: React.FC<DateEntryProps> = ({ handleDates }) => {
               },
             })}
             className={
-              isError
+              errors.month
                 ? "p-3 w-[100%] desktop:w-[150px] h-14 mb-2 border rounded-md border-lightRed text-xl desktop:text-3xl font-bold cursor-pointer"
                 : "p-3 w-[100%] desktop:w-[150px] h-14 border rounded-md hover:border-purple text-xl desktop:text-3xl font-bold cursor-pointer"
             }
           />
           <div className='md:hidden leading-3'>
-            {errors.month && (
+            {errors.month?.message && (
               <label className="text-lightRed italic text-xs desktop:text-lg">
                 {errors.month.message}
               </label>
@@ -149,7 +143,7 @@ const DateEntry: React.FC<DateEntryProps> = ({ handleDates }) => {
           </div>
         </div>
         <div className="flex flex-col gap-1">
-          {isError ? (
+          {errors.year ? (
             <label className="text-lightRed tracking-widest text-xs desktop:text-lg font-bold">
               YEAR
             </label>
@@ -181,7 +175,7 @@ const DateEntry: React.FC<DateEntryProps> = ({ handleDates }) => {
               },
             })}
             className={
-              isError
+              errors.year
                 ? "p-3 w-[100%] desktop:w-[150px] mb-2 h-14 border rounded-md border-lightRed text-xl desktop:text-3xl font-bold cursor-pointer"
                 : "p-3 w-[100%] desktop:w-[150px] h-14 border rounded-md hover:border-purple text-xl desktop:text-3xl font-bold cursor-pointer"
             }
